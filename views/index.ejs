@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<table>
+	<%=tit%>
+	<img src="/images/icon_play.jpeg" alt="" />
+    <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+        <!--<th>性别</th>-->
+        <th>操作</th>
+    </tr>
+    <%if(title.length==0){%>
+    <tr>
+        <td colspan="4">没信息</td>
+    </tr>
+    <%}else{%>
+    <%for(var i=0;i<title.length;i++){%>
+    <tr>
+        <td><%=title[i].user_name%></td>
+        <td><%=title[i].email%></td>
+        <td>
+            <a href="/edit/<%=title[i].admin_id%>">编辑</a>
+            <a href="/del/<%=title[i].admin_id%>">删除</a>
+        </td>
+    </tr>
+    <%}%>
+    <%}%>
+</table>
+</body>
+</html>
